@@ -52,7 +52,8 @@ jobs:
   - task: CmdLine@2
     inputs:
      script: |
-      echo Write your commands here
-      
+      echo Artifact Staging Directory:
+      echo $(build.artifactstagingdirectory)
+      echo $(Build.DefinitionName)
       echo Hello world
  
