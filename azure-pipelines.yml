@@ -25,19 +25,23 @@ jobs:
   - task: DotNetCoreCLI@2
     displayName: Restore
     inputs:
-      ConnectedServiceName: a052c6a2-b1e2-446d-a8e4-9886931a5000
+      #ConnectedServiceName: a052c6a2-b1e2-446d-a8e4-9886931a5000
+      azureSubscription: 'Free Trial(5a30f187-782d-433d-80f9-6c99064fc497)'
       command: restore
       projects: $(BuildParameters.RestoreBuildProjects)
+
   - task: DotNetCoreCLI@2
     displayName: Build
     inputs:
-      ConnectedServiceName: a052c6a2-b1e2-446d-a8e4-9886931a5000
+      #ConnectedServiceName: a052c6a2-b1e2-446d-a8e4-9886931a5000
+      azureSubscription: 'Free Trial(5a30f187-782d-433d-80f9-6c99064fc497)'
       projects: $(BuildParameters.RestoreBuildProjects)
       arguments: --configuration $(BuildConfiguration)
   - task: DotNetCoreCLI@2
     displayName: Publish
     inputs:
-      ConnectedServiceName: a052c6a2-b1e2-446d-a8e4-9886931a5000
+      #ConnectedServiceName: a052c6a2-b1e2-446d-a8e4-9886931a5000
+      azureSubscription: 'Free Trial(5a30f187-782d-433d-80f9-6c99064fc497)'
       command: publish
       publishWebProjects: True
       projects: $(BuildParameters.RestoreBuildProjects)
@@ -55,7 +59,7 @@ jobs:
     inputs:
         buildType: 'specific'
         project: $(System.TeamProject)
-        definition: '34' #$(system.definitionId)
+        definition: '35' #$(system.definitionId)
         buildVersionToDownload: 'latest'
         downloadType: 'single'
         artifactName: 'drop'
