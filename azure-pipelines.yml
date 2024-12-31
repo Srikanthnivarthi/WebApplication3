@@ -48,7 +48,7 @@ jobs:
     inputs:
         buildType: 'specific'
         project: $(System.TeamProject)
-        definition: $(Build.DefinitionId)
+        definition: $(system.definitionId)
         buildVersionToDownload: 'latest'
         downloadType: 'single'
         artifactName: 'drop'
